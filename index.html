@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #f5f5f5;
             color: #222;
             min-height: 100vh;
@@ -21,11 +21,22 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            line-height: 1.6;
             padding: 20px;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         h1 {
@@ -39,39 +50,81 @@
             margin-bottom: 30px;
         }
 
+        .about {
+            font-size: 1rem;
+            color: #444;
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+        }
+
         h2 {
-            margin-top: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         ul {
             list-style: none;
+            margin-bottom: 35px;
         }
 
         li {
-            margin: 8px 0;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+            margin: 10px 0;
+            font-size: 1.05rem;
         }
 
         .contact {
-            margin-top: 30px;
+            margin-top: 10px;
+        }
+
+        .email-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
+
+        <img src="profile.jpg" alt="Joe Heavener" class="profile-pic">
+
         <h1>Joe Heavener</h1>
 
         <p class="subtitle">
             Data Analyst • Real Estate Agent • Church Ministry Volunteer
+        </p>
+
+        <p class="about">
+            Welcome to my corner of the internet. This site serves as a personal
+            playground for projects, experiments, ministry resources, technology,
+            data analytics, and anything else I find interesting enough to build.
         </p>
 
         <h2>Projects & Interests</h2>
@@ -87,12 +140,17 @@
 
         <div class="contact">
             <h2>Contact</h2>
-            <p>
-                <a href="mailto:jpheavener@gmail.com">
-                    jpheavener@gmail.com
-                </a>
-            </p>
+
+            <a class="email-link" href="mailto:jpheavener@gmail.com">
+                jpheavener@gmail.com
+            </a>
         </div>
+
+        <div class="footer">
+            JoeHeavener.com
+        </div>
+
     </div>
+
 </body>
 </html>
