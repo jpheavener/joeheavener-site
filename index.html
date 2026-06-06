@@ -1,83 +1,89 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joe Heavener</title>
-    <link rel="stylesheet" href="style.css?v=4">
+
+    <script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
-```
-<nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="data-analytics.html">Data</a>
-    <a href="real-estate.html">Real Estate</a>
-    <a href="worship-ministry.html">Worship</a>
-    <a href="hijet.html">Hijet</a>
-    <a href="lego-projects.html">LEGO</a>
-    <a href="metallurgy.html">Metallurgy</a>
-    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
-</nav>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="data-analytics.html">Data</a>
+        <a href="real-estate.html">Real Estate</a>
+        <a href="worship-ministry.html">Worship</a>
+        <a href="hijet.html">Hijet</a>
+        <a href="lego-projects.html">LEGO</a>
+        <a href="metallurgy.html">Metallurgy</a>
+        <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-    <img src="profile.jpg" alt="Joe Heavener" class="profile-pic">
+        <img src="profile.jpg" alt="Joe Heavener" class="profile-pic">
 
-    <h1>Joe Heavener</h1>
+        <h1>Joe Heavener</h1>
 
-    <p class="subtitle">
-        Data Analyst • Real Estate Agent • Church Ministry Volunteer
-    </p>
+        <p class="subtitle">
+            Data Analyst • Real Estate Agent • Church Ministry Volunteer
+        </p>
 
-    <p class="about">
-        This site serves as a personal playground for projects, experiments,
-        ministry resources, metallurgy, data analytics, and anything else I
-        find interesting enough to build.
-    </p>
+        <p class="about">
+            This site serves as a personal playground for projects, experiments,
+            ministry resources, metallurgy, data analytics, and anything else I
+            find interesting enough to build.
+        </p>
 
-    <h2>Projects & Interests</h2>
+        <h2>Projects & Interests</h2>
 
-    <ul class="project-list">
-        <li><a href="data-analytics.html">📊 Power BI & Data Analytics</a></li>
-        <li><a href="real-estate.html">🏡 Real Estate</a></li>
-        <li><a href="worship-ministry.html">🎹 Piano & Worship Ministry</a></li>
-        <li><a href="hijet.html">🚚 1998 Daihatsu Hijet</a></li>
-        <li><a href="lego-projects.html">🧱 LEGO Projects</a></li>
-        <li><a href="metallurgy.html">🔥 Metallurgy</a></li>
-    </ul>
+        <ul class="project-list">
+            <li><a href="data-analytics.html">📊 Power BI & Data Analytics</a></li>
+            <li><a href="real-estate.html">🏡 Real Estate</a></li>
+            <li><a href="worship-ministry.html">🎹 Piano & Worship Ministry</a></li>
+            <li><a href="hijet.html">🚚 1998 Daihatsu Hijet</a></li>
+            <li><a href="lego-projects.html">🧱 LEGO Projects</a></li>
+            <li><a href="metallurgy.html">🔥 Metallurgy</a></li>
+        </ul>
 
-    <div class="contact">
-        <h2>Contact</h2>
+        <div class="contact">
+            <h2>Contact</h2>
 
-        <a class="email-link" href="mailto:jpheavener@gmail.com">
-            jpheavener@gmail.com
-        </a>
+            <a class="email-link" href="mailto:jpheavener@gmail.com">
+                jpheavener@gmail.com
+            </a>
+        </div>
+
+        <div class="footer">
+            JoeHeavener.com
+        </div>
+
     </div>
 
-    <div class="footer">
-        JoeHeavener.com
-    </div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            document.documentElement.classList.toggle("dark-mode");
 
-</div>
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
 
-<script>
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
-}
-
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-}
-</script>
-```
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
 
 </body>
 </html>
