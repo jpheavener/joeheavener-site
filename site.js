@@ -1,6 +1,6 @@
 // DARK MODE
 
-function toggleDarkMode() {
+window.toggleDarkMode = function () {
     document.body.classList.toggle("dark-mode");
     document.documentElement.classList.toggle("dark-mode");
 
@@ -9,7 +9,7 @@ function toggleDarkMode() {
     } else {
         localStorage.setItem("theme", "light");
     }
-}
+};
 
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
