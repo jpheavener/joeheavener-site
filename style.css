@@ -225,3 +225,13 @@ body.dark-mode .dark-toggle:hover {
         font-size: 0.85rem;
     }
 }
+body {
+    opacity: 0;
+    animation: fadeIn 0.25s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
