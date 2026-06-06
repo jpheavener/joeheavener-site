@@ -225,11 +225,13 @@ body.dark-mode .dark-toggle:hover {
         font-size: 0.85rem;
     }
 }
-.navbar a.active {
+.navbar a.active,
+.navbar a.active:visited,
+.navbar a.active:hover {
     color: #66b3ff !important;
     text-shadow: 0 0 8px #66b3ff !important;
-    border-bottom: 2px solid #66b3ff;
-    padding-bottom: 3px;
+    border-bottom: 2px solid #66b3ff !important;
+    padding-bottom: 3px !important;
 }
 
 body.dark-mode .navbar a.active,
