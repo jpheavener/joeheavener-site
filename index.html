@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="style.css?v=6">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -67,6 +68,10 @@
 
     </div>
 
+    <audio id="hoverSound" preload="auto">
+        <source src="dot_sound.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
@@ -83,46 +88,30 @@
             document.body.classList.add("dark-mode");
             document.documentElement.classList.add("dark-mode");
         }
-    </script>
-<audio id="hoverSound" preload="auto">
-    <source src="dot_sound.mp3" type="audio/mp4">
-</audio>
-    <script>
-    function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
-        document.documentElement.classList.toggle("dark-mode");
 
-        if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
-        } else {
-            localStorage.setItem("theme", "light");
-        }
-    }
+        const hoverSound = document.getElementById("hoverSound");
+        let audioEnabled = false;
 
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        document.documentElement.classList.add("dark-mode");
-    }
+        document.addEventListener("click", () => {
+            audioEnabled = true;
 
-    const hoverSound = document.getElementById("hoverSound");
+            hoverSound.play().then(() => {
+                hoverSound.pause();
+                hoverSound.currentTime = 0;
+            }).catch(() => {});
+        }, { once: true });
 
-    let audioEnabled = false;
+        document.querySelectorAll("a, button").forEach(item => {
+            item.addEventListener("mouseenter", () => {
+                if (!audioEnabled) return;
 
-    document.addEventListener("click", () => {
-        audioEnabled = true;
-    }, { once: true });
-
-    document.querySelectorAll("a, button").forEach(item => {
-        item.addEventListener("mouseenter", () => {
-            if (!audioEnabled) return;
-
-            hoverSound.pause();
-            hoverSound.currentTime = 0;
-            hoverSound.volume = 0.15;
-
-            hoverSound.play().catch(() => {});
+                hoverSound.pause();
+                hoverSound.currentTime = 0;
+                hoverSound.volume = 0.2;
+                hoverSound.play().catch(() => {});
+            });
         });
-    });
-</script>
+    </script>
+
 </body>
 </html>
