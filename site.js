@@ -55,3 +55,4 @@ document.querySelectorAll(".navbar a").forEach(link => {
         link.classList.add("active");
     }
 });
+alert("site.js is loading");
