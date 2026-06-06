@@ -36,3 +36,12 @@ document.querySelectorAll("a, button").forEach(item => {
         soundClone.play().catch(() => {});
     });
 });
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+document.querySelectorAll(".navbar a").forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === currentPage) {
+        link.classList.add("active");
+    }
+});
