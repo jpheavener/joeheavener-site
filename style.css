@@ -14,7 +14,7 @@ body {
     align-items: center;
     text-align: center;
     line-height: 1.6;
-    padding: 20px;
+    padding: 90px 20px 20px;
 }
 
 .container {
@@ -110,4 +110,30 @@ li {
         width: 180px;
         height: 180px;
     }
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.navbar a:hover {
+    color: #0066cc;
+    text-decoration: underline;
 }
