@@ -46,13 +46,15 @@ document.querySelectorAll("a, button").forEach(item => {
 
 // ACTIVE NAVIGATION
 
-const path = window.location.pathname;
-const currentPage = path.substring(path.lastIndexOf("/") + 1) || "index.html";
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 document.querySelectorAll(".navbar a").forEach(link => {
-    const linkPage = link.getAttribute("href");
+    const linkPage = link.getAttribute("href").split("/").pop();
 
-    if (linkPage === currentPage) {
+    if (
+        currentPage === linkPage ||
+        window.location.pathname.endsWith("/" + linkPage)
+    ) {
         link.classList.add("active");
         link.style.color = "#66b3ff";
         link.style.textShadow = "0 0 8px #66b3ff";
