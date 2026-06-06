@@ -15,10 +15,11 @@ if (localStorage.getItem("theme") === "dark") {
 }
 
 const hoverSound = document.getElementById("hoverSound");
-let audioEnabled = false;
+let audioEnabled = localStorage.getItem("audioEnabled") === "true";
 
 document.addEventListener("click", () => {
     audioEnabled = true;
+    localStorage.setItem("audioEnabled", "true");
 
     hoverSound.play().then(() => {
         hoverSound.pause();
