@@ -46,13 +46,17 @@ document.querySelectorAll("a, button").forEach(item => {
 
 // ACTIVE NAVIGATION
 
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const path = window.location.pathname;
+const currentPage = path.substring(path.lastIndexOf("/") + 1) || "index.html";
 
 document.querySelectorAll(".navbar a").forEach(link => {
-    const linkPage = link.getAttribute("href").split("/").pop();
+    const linkPage = link.getAttribute("href");
 
     if (linkPage === currentPage) {
         link.classList.add("active");
+        link.style.color = "#66b3ff";
+        link.style.textShadow = "0 0 8px #66b3ff";
+        link.style.borderBottom = "2px solid #66b3ff";
+        link.style.paddingBottom = "3px";
     }
 });
-alert("site.js is loading");
