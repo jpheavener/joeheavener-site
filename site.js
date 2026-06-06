@@ -46,19 +46,21 @@ document.querySelectorAll("a, button").forEach(item => {
 
 // ACTIVE NAVIGATION
 
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const pageTitle = document.title.toLowerCase();
 
 document.querySelectorAll(".navbar a").forEach(link => {
-    const linkPage = link.getAttribute("href").split("/").pop();
+    const linkText = link.textContent.toLowerCase();
 
     if (
-        currentPage === linkPage ||
-        window.location.pathname.endsWith("/" + linkPage)
+        pageTitle.includes(linkText) ||
+        (pageTitle.includes("joe heavener") && linkText === "home") ||
+        (pageTitle.includes("data") && linkText === "data") ||
+        (pageTitle.includes("real estate") && linkText === "real estate") ||
+        (pageTitle.includes("worship") && linkText === "worship") ||
+        (pageTitle.includes("hijet") && linkText === "hijet") ||
+        (pageTitle.includes("lego") && linkText === "lego") ||
+        (pageTitle.includes("metallurgy") && linkText === "metallurgy")
     ) {
         link.classList.add("active");
-        link.style.color = "#66b3ff";
-        link.style.textShadow = "0 0 8px #66b3ff";
-        link.style.borderBottom = "2px solid #66b3ff";
-        link.style.paddingBottom = "3px";
     }
 });
