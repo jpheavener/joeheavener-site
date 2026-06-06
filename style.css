@@ -238,3 +238,6 @@ body.dark-mode .footer {
 body.dark-mode .profile-pic {
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.12);
 }
+.dark-toggle {
+    min-width: 38px;
+}
