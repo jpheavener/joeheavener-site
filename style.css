@@ -226,12 +226,15 @@ body.dark-mode .dark-toggle:hover {
     }
 }
 .navbar a.active {
-    color: #66b3ff;
-    text-shadow: 0 0 8px #66b3ff;
+    color: #66b3ff !important;
+    text-shadow: 0 0 8px #66b3ff !important;
+    border-bottom: 2px solid #66b3ff;
+    padding-bottom: 3px;
 }
 
 body.dark-mode .navbar a.active,
 html.dark-mode .navbar a.active {
-    color: #66b3ff;
-    text-shadow: 0 0 8px #66b3ff;
+    color: #66b3ff !important;
+    text-shadow: 0 0 8px #66b3ff !important;
+    border-bottom: 2px solid #66b3ff;
 }
