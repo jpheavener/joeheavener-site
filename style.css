@@ -165,3 +165,35 @@ li {
         font-size: 0.85rem;
     }
 }
+.dark-toggle {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dark-toggle:hover {
+    background: white;
+    color: #222;
+}
+
+body.dark-mode {
+    background-color: #111;
+    color: #f5f5f5;
+}
+
+body.dark-mode .subtitle,
+body.dark-mode .about {
+    color: #ccc;
+}
+
+body.dark-mode .project-list a {
+    color: #f5f5f5;
+}
+
+body.dark-mode .footer {
+    color: #aaa;
+}
